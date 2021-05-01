@@ -163,6 +163,15 @@ const followTheLight = (studentID) => {
   });
 };
 
+const killStudent = () => {
+  const currentLiveStudents = livingStudents();
+  const randomStudent = currentLiveStudents[Math.floor(Math.random() * currentLiveStudents.length)];
+
+  const index = students.indexOf(randomStudent);
+  students[index].isDead = true;
+  return [livingStudents(), dearlyBeloved()];
+};
+
 export {
-  students, livingStudents, dearlyBeloved, followTheLight
+  students, livingStudents, dearlyBeloved, followTheLight, killStudent
 };
