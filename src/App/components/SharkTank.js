@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LiveStudent from './LiveStudent';
 
 const SharkTank = ({ livinStudents }) => (
-    <ul>
+    <div className="shark-container">
     {livinStudents.map((liveStudent) => (
-      <li key={liveStudent.id}>
-        {`${liveStudent.firstName} ${liveStudent.lastName}`}
-      </li>
+      <LiveStudent key={liveStudent.id} student={liveStudent} />
     ))}
-  </ul>
+  </div>
 );
 
 SharkTank.propTypes = {

@@ -10,13 +10,7 @@ import SharkTank from './components/SharkTank';
 function App() {
   const [livinStudents, setLivinStudents] = useState([]);
   const [deadStudents, setDeadStudents] = useState([]);
-  // state to store students. living students, set living.
-  // use effect for getting live students, setLivingState
-  // setLivingState(getLiveStudents())
-  // setDeadStudentSate(getDeadStudents())
-  // function to kill random student, first declare variable to getLiveStudents  =liveStudents[Math.floor(Math.random() * students.length)]. can do in data or click
-  // function to call the killStudent, const [living, dead] = killStudent() <- destructuring the returned two arrays.
-  // setLivingStudents(living) setDeadStudents(dead);
+
   useEffect(() => {
     setLivinStudents(livingStudents());
     setDeadStudents(dearlyBeloved());
@@ -30,16 +24,15 @@ function App() {
 
   return (
     <div className='App'>
+      <h2 className="mt-2"> Welcome to the Shark Tank!</h2>
+      <h3>Click the button bellow to randomly select a student to send to a watery demise!</h3>
       {livinStudents.length
-        ? <Button color='danger' onClick={handleClick}>Shark Attack</Button> : ''
+        ? <Button className="mt-2" color='danger' onClick={handleClick}>Shark Attack</Button> : ''
       }
-      <h2>Living Students</h2>
+      <h4 className="mt-2">Fresh Meat</h4>
       <SharkTank livinStudents={livinStudents} />
-      <h2>Dead Students</h2>
+      <h2>Dearly Departed</h2>
       <Graveyard deadStudents={deadStudents} />
-      {/* Kill student button */}
-      {/* Div with alive students */}
-      {/* Div with dead students */}
     </div>
   );
 }

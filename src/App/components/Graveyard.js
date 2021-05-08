@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import GraveStone from './GraveStone';
 
 const Graveyard = ({ deadStudents }) => (
-    <ul>
+   <div className="grave-container">
     {deadStudents.map((deadStudent) => (
-      <li key={deadStudent.id}>
-        {`${deadStudent.firstName} ${deadStudent.lastName}`}
-      </li>
+      <GraveStone key={deadStudent.id} student={deadStudent} />
     ))}
-  </ul>
+  </div>
 );
 
 Graveyard.propTypes = {
